@@ -1,4 +1,4 @@
-﻿namespace kontrolnaia_aoci
+﻿namespace ktr
 {
     partial class Form1
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace kontrolnaia_aoci
+namespace ktr
 {
     internal static class Program
     {
