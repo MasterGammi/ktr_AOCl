@@ -43,13 +43,13 @@ namespace ktr
             Image<Gray,byte> cannyEdges = grayImage.Canny(cannyThresold, cannyThresoldLinking);
 
             var cannyEdgesBgr = cannyEdges.Convert<Bgr, byte>();
-            var resultImage = sourceImage.Sub(cannyEdgesBgr); // попиксельное вычитание
-                                                              //обход по каналам
+            var resultImage = sourceImage.Sub(cannyEdgesBgr);
+
             for (int channel = 0; channel < resultImage.NumberOfChannels; channel++)
                 for (int x = 0; x < resultImage.Width; x++)
-                    for (int y = 0; y < resultImage.Height; y++) // обход по пискелям
+                    for (int y = 0; y < resultImage.Height; y++)
                     {
-                        // получение цвета пикселя
+                        
                         byte color = resultImage.Data[y, x, channel];
                         if (color <= 50)
                             color = 0;
@@ -61,7 +61,7 @@ namespace ktr
                             color = 210;
                         else
                             color = 255;
-                        resultImage.Data[y, x, channel] = color; // изменение цвета пикселя
+                        resultImage.Data[y, x, channel] = color; 
                     }
 
 
